@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TL STORE | A sua vantagem no Free Fire</title>
+    <!-- Tailwind CSS para estilização moderna e rápida -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts para tipografia Gamer e Moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons para ícones modernos -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #05020a;
+        }
+        .font-gamer {
+            font-family: 'Orbitron', sans-serif;
+        }
+        /* Barra de rolagem personalizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #05020a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a855f7;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+        /* Efeitos de brilho neon */
+        .neon-border-purple {
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+            border: 1px solid rgba(168, 85, 247, 0.6);
+        }
+        .neon-glow-text {
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.8), 0 0 20px rgba(168, 85, 247, 0.4);
+        }
+        /* Transição suave de abas */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-gray-100 min-h-screen flex flex-col overflow-x-hidden">
+
+    <!-- HEADER / NAVEGAÇÃO -->
+    <header class="border-b border-purple-950/50 bg-[#0a0518]/95 backdrop-blur-md sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-3">
+            <!-- Área da Logo -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="scrollToSection('hero')">
+                <img src="36077.png" alt="TL STORE Logo" class="w-10 h-10 rounded-full border border-purple-500/50 object-cover neon-border-purple" onerror="this.src='https://placehold.co/100x100/1e0b36/a855f7?text=TL'">
+                <div>
+                    <span class="font-gamer font-black text-xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-400">TL STORE</span>
+                    <p class="text-[10px] uppercase tracking-widest text-blue-400 -mt-1 font-semibold">Free Fire VIP</p>
+                </div>
+            </div>
+
+            <!-- Links de Navegação -->
+            <nav class="hidden lg:flex items-center space-x-8 text-lg font-semibold">
+                <a href="#produtos" onclick="showCategory('sensibilidade')" class="hover:text-purple-400 transition duration-300 flex items-center gap-1.5">
+                    <i data-lucide="target" class="w-4 h-4 text-purple-500"></i> Sensibilidades
+                </a>
+                <a href="#produtos" onclick="showCategory('hud')" class="hover:text-blue-400 transition duration-300 flex items-center gap-1.5">
+                    <i data-lucide="layout" class="w-4 h-4 text-blue-500"></i> HUDs
+                </a>
+                <a href="#duvidas" class="hover:text-purple-400 transition duration-300">FAQ</a>
+            </nav>
+
+            <!-- Botões de Ação -->
+            <div class="flex items-center space-x-3 ml-auto lg:ml-0">
+                <!-- Botão Oficial do Discord -->
+                <a href="https://discord.gg/SqQCERwcD" target="_blank" class="bg-[#5865F2] hover:bg-[#4752C4] text-white font-gamer font-bold px-4 py-2 rounded-lg text-xs tracking-wider transition-all duration-300 flex items-center gap-2 hover:scale-105 shadow-[0_0_15px_rgba(88,101,242,0.3)]">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 127.14 96.36">
+                        <path d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a77.7,77.7,0,0,0,6.63-10.85,68.43,68.43,0,0,1-10.45-5c.87-.64,1.71-1.32,2.51-2a75.52,75.52,0,0,0,72.71,0c.8.71,1.64,1.39,2.51,2a68.43,68.43,0,0,1-10.45,5,77.7,77.7,0,0,0,6.63,10.85,105.73,105.73,0,0,0,31-18.83C129.87,50.22,123.82,27.46,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.9,46,53.72,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.14,46,96,53,91,65.69,84.69,65.69Z"/>
+                    </svg>
+                    <span>DISCORD</span>
+                </a>
+
+                <button onclick="toggleCart()" class="relative p-2 bg-purple-950/40 rounded-lg hover:bg-purple-900/40 border border-purple-500/30 transition duration-300">
+                    <i data-lucide="shopping-cart" class="w-5 h-5 text-purple-400"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-blue-600 text-white font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center animate-bounce hidden">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (BANNER PRINCIPAL) -->
+    <section id="hero" class="relative min-h-[80vh] flex items-center justify-center py-16 px-4 overflow-hidden">
+        <!-- Background glows -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <!-- Grid de fundo -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f1a3a_1px,transparent_1px),linear-gradient(to_bottom,#1f1a3a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+            
+            <!-- Conteúdo Esquerdo -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 bg-purple-950/40 border border-purple-500/30 rounded-full px-4 py-1.5 text-xs uppercase tracking-widest text-purple-300 font-bold">
+                    <span class="w-2 h-2 rounded-full bg-purple-500 animate-ping"></span>
+                    <span>ENTREGA INTEGRADA VIA TICKET NO DISCORD</span>
+                </div>
+                
+                <h1 class="font-gamer font-black text-5xl sm:text-6xl md:text-7xl leading-none uppercase tracking-tight">
+                    MAIS <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-purple-300 neon-glow-text">CAPA</span><br>
+                    MAIS <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-300">PRECISÃO</span>
+                </h1>
+                
+                <p class="text-gray-400 text-lg md:text-xl max-w-xl mx-auto lg:mx-0">
+                    Sua verdadeira vantagem no <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 font-bold">Free Fire</span>. Obtenha arquivos e configurações oficiais com entrega rápida via **Ticket** no nosso servidor oficial.
+                </p>
+
+                <!-- Badges rápidos -->
+                <div class="grid grid-cols-3 gap-3 pt-4 max-w-md mx-auto lg:mx-0 text-center">
+                    <div class="bg-slate-900/60 p-3 rounded-lg border border-purple-950/40">
+                        <p class="text-2xl font-gamer font-bold text-purple-400">100%</p>
+                        <p class="text-xs text-gray-500 uppercase font-semibold">Anti-Ban</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-3 rounded-lg border border-purple-950/40">
+                        <p class="text-2xl font-gamer font-bold text-blue-400">+92%</p>
+                        <p class="text-xs text-gray-500 uppercase font-semibold">Taxa HS</p>
+                    </div>
+                    <div class="bg-slate-900/60 p-3 rounded-lg border border-purple-950/40">
+                        <p class="text-2xl font-gamer font-bold text-white">Discord</p>
+                        <p class="text-xs text-gray-500 uppercase font-semibold">Entrega</p>
+                    </div>
+                </div>
+
+                <!-- Botões de ação -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#produtos" onclick="showCategory('sensibilidade')" class="w-full sm:w-auto bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-500 hover:to-purple-700 text-white font-gamer font-bold text-lg px-8 py-4 rounded-xl transition duration-300 shadow-[0_0_20px_rgba(168,85,247,0.4)] text-center hover:scale-[1.02]">
+                        VER SENSIBILIDADES
+                    </a>
+                    <a href="#produtos" onclick="showCategory('hud')" class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-blue-400 hover:text-blue-300 font-gamer font-bold text-lg px-8 py-4 rounded-xl border border-blue-500/40 hover:border-blue-500/80 transition duration-300 text-center hover:scale-[1.02]">
+                        VER HUDS PRO
+                    </a>
+                </div>
+            </div>
+
+            <!-- Lado Direito (Logo Oficial 36077.png) -->
+            <div class="lg:col-span-5 flex justify-center items-center relative">
+                <!-- Anéis de Glow de Fundo -->
+                <div class="absolute w-72 h-72 sm:w-85 sm:h-85 border-4 border-dashed border-purple-500/20 rounded-full animate-[spin_60s_linear_infinite] pointer-events-none"></div>
+                <div class="absolute w-64 h-64 sm:w-80 sm:h-80 border-2 border-purple-500/40 rounded-full neon-border-purple animate-[spin_20s_linear_infinite] pointer-events-none"></div>
+                
+                <!-- Card Central da Logo -->
+                <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-purple-600 shadow-[0_0_50px_rgba(168,85,247,0.4)] group bg-[#0c051a]">
+                    <img src="36077.png" alt="TL Store Logo Oficial" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/400x400/1e0b36/a855f7?text=TL+STORE'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0518] via-transparent to-transparent opacity-30"></div>
+                </div>
+
+                <!-- Ícones flutuantes decorativos -->
+                <div class="absolute -top-4 -right-4 bg-purple-950/80 border border-purple-500/50 rounded-full p-2.5 animate-bounce">
+                    <i data-lucide="target" class="w-6 h-6 text-purple-400"></i>
+                </div>
+                <div class="absolute -bottom-4 -left-4 bg-[#5865F2] border border-blue-500/50 rounded-full p-2.5 animate-bounce" style="animation-delay: 1s;">
+                    <i data-lucide="message-square" class="w-6 h-6 text-white"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMAÇÕES DE BENEFÍCIOS -->
+    <section class="py-12 bg-[#090414] border-y border-purple-950/40">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="flex items-start space-x-4">
+                <div class="p-3 bg-[#5865F2]/20 rounded-xl border border-[#5865F2]/40">
+                    <svg class="w-8 h-8 text-[#5865F2] fill-current" viewBox="0 0 127.14 96.36">
+                        <path d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a77.7,77.7,0,0,0,6.63-10.85,68.43,68.43,0,0,1-10.45-5c.87-.64,1.71-1.32,2.51-2a75.52,75.52,0,0,0,72.71,0c.8.71,1.64,1.39,2.51,2a68.43,68.43,0,0,1-10.45,5,77.7,77.7,0,0,0,6.63,10.85,105.73,105.73,0,0,0,31-18.83C129.87,50.22,123.82,27.46,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.9,46,53.72,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.14,46,96,53,91,65.69,84.69,65.69Z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-gamer font-bold text-lg text-white uppercase">TICKET NO DISCORD</h3>
+                    <p class="text-gray-400 text-sm">Resgate seguro e imediato. Compra no site e retira diretamente no Discord oficial abrindo um Ticket.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4">
+                <div class="p-3 bg-blue-900/20 rounded-xl border border-blue-500/30">
+                    <i data-lucide="settings-2" class="w-8 h-8 text-blue-400"></i>
+                </div>
+                <div>
+                    <h3 class="font-gamer font-bold text-lg text-white uppercase">SUPORTE VIP INDIVIDUAL</h3>
+                    <p class="text-gray-400 text-sm">Equipe técnica pronta para te auxiliar na calibração do seu celular ou emulador.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4">
+                <div class="p-3 bg-purple-900/20 rounded-xl border border-purple-500/30">
+                    <i data-lucide="refresh-cw" class="w-8 h-8 text-purple-400"></i>
+                </div>
+                <div>
+                    <h3 class="font-gamer font-bold text-lg text-white uppercase">ATUALIZAÇÕES INCLUSAS</h3>
+                    <p class="text-gray-400 text-sm">Com o lançamento de novas atualizações do Free Fire, as sensibilidades são recalculadas e compartilhadas no Discord.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUTOS SECTION -->
+    <section id="produtos" class="py-20 px-4 max-w-6xl mx-auto">
+        <div class="text-center space-y-4 mb-16">
+            <h2 class="font-gamer font-black text-4xl sm:text-5xl uppercase text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-400">
+                ESCOLHA SEU ARSENAL
+            </h2>
+            <p class="text-gray-400 max-w-xl mx-auto">
+                Selecione a categoria desejada abaixo. Todas as compras geram um código de faturamento rápido e resgate por Ticket no Discord.
+            </p>
+
+            <!-- ABAS DE NAVEGAÇÃO -->
+            <div class="flex flex-wrap justify-center gap-4 pt-6">
+                <button onclick="showCategory('all')" id="btn-all" class="px-6 py-3.5 bg-purple-600 text-white font-gamer font-extrabold rounded-xl transition duration-300 border border-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:scale-105">
+                    VER TUDO
+                </button>
+                <button onclick="showCategory('sensibilidade')" id="btn-sensibilidade" class="px-6 py-3.5 bg-slate-900 text-gray-300 hover:text-white font-gamer font-extrabold rounded-xl transition duration-300 border border-purple-950/60 hover:bg-slate-800 flex items-center gap-2 hover:scale-105">
+                    <i data-lucide="target" class="w-5 h-5 text-purple-400"></i>
+                    SENSIBILIDADES
+                </button>
+                <button onclick="showCategory('hud')" id="btn-hud" class="px-6 py-3.5 bg-slate-900 text-gray-300 hover:text-white font-gamer font-extrabold rounded-xl transition duration-300 border border-purple-950/60 hover:bg-slate-800 flex items-center gap-2 hover:scale-105">
+                    <i data-lucide="layout" class="w-5 h-5 text-blue-400"></i>
+                    HUDs PROFISSIONAIS
+                </button>
+            </div>
+        </div>
+
+        <!-- CONTEÚDO DA ABA: TUDO -->
+        <div id="all-container" class="tab-content active">
+            <!-- Sensibilidades -->
+            <div class="mb-12">
+                <h3 class="font-gamer font-bold text-2xl text-purple-400 uppercase mb-6 flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-purple-500 animate-pulse"></span>
+                    Sensibilidades VIP (Apenas Vermelho)
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="sensibilidades-grid-all">
+                    <!-- Dinâmico via JavaScript -->
+                </div>
+            </div>
+
+            <!-- HUDs -->
+            <div>
+                <h3 class="font-gamer font-bold text-2xl text-blue-400 uppercase mb-6 flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+                    HUDs Pró-Gamer
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6" id="huds-grid-all">
+                    <!-- Dinâmico via JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTEÚDO DA ABA: SENSIBILIDADES -->
+        <div id="sensibilidade-container" class="tab-content">
+            <div class="flex items-center justify-between border-b border-purple-900/40 pb-4 mb-8">
+                <h3 class="font-gamer font-black text-3xl text-purple-400 flex items-center gap-2">
+                    <i data-lucide="target" class="w-8 h-8"></i> SENSIBILIDADES
+                </h3>
+                <span class="bg-purple-950 text-purple-300 px-3 py-1 rounded text-xs font-bold uppercase border border-purple-500/30">3 Ativos</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="sensibilidades-grid-only">
+                <!-- Dinâmico via JavaScript -->
+            </div>
+        </div>
+
+        <!-- CONTEÚDO DA ABA: HUDS -->
+        <div id="hud-container" class="tab-content">
+            <div class="flex items-center justify-between border-b border-blue-900/40 pb-4 mb-8">
+                <h3 class="font-gamer font-black text-3xl text-blue-400 flex items-center gap-2">
+                    <i data-lucide="layout" class="w-8 h-8"></i> HUDS PROFISSIONAIS
+                </h3>
+                <span class="bg-blue-950 text-blue-300 px-3 py-1 rounded text-xs font-bold uppercase border border-blue-500/30">4 Ativos</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6" id="huds-grid-only">
+                <!-- Dinâmico via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CALIBRADOR DE CONFIGURAÇÃO INTERATIVO -->
+    <section class="py-16 bg-[#080212] border-t border-purple-950/40 relative overflow-hidden">
+        <div class="absolute -top-24 right-0 w-80 h-80 bg-purple-600/5 rounded-full blur-3xl"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <div class="bg-gradient-to-br from-[#110924] to-[#0a0518] p-8 rounded-2xl border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.15)]">
+                <div class="text-center space-y-4 mb-8">
+                    <div class="inline-flex items-center space-x-2 bg-blue-950/40 border border-blue-500/30 rounded-full px-3 py-1 text-xs uppercase tracking-widest text-blue-300 font-bold">
+                        <span>RECOMENDAÇÃO INTELIGENTE</span>
+                    </div>
+                    <h3 class="font-gamer font-black text-3xl uppercase text-white">SIMULADOR DE AJUSTES</h3>
+                    <p class="text-gray-400 text-sm">Insira seu perfil de jogo para identificarmos quais configurações vão otimizar o seu desempenho.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Formulário -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-400 mb-2 uppercase">Aparelho ou Dispositivo</label>
+                            <select id="sim-device" class="w-full bg-slate-950 border border-purple-900/60 rounded-lg p-3 text-white focus:border-purple-500 focus:outline-none">
+                                <option value="android_low">Android (DPI Padrão / Celular Comum)</option>
+                                <option value="android_high">Android Premium (Alta taxa de atualização)</option>
+                                <option value="ios">iPhone / iPad (iOS)</option>
+                                <option value="emulador">PC / Emulador (BlueStacks/MSI)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-400 mb-2 uppercase">Maior Dificuldade Atual</label>
+                            <select id="sim-difficulty" class="w-full bg-slate-950 border border-purple-900/60 rounded-lg p-3 text-white focus:border-purple-500 focus:outline-none">
+                                <option value="pinando">A mira passa da cabeça (Descalibrada)</option>
+                                <option value="peito">A mira fixa apenas no peito (Amarelo)</option>
+                                <option value="lento">Gelo lento / Baixa velocidade de rotação</option>
+                                <option value="recoil">Muito tremor de mira no disparo contínuo</option>
+                            </select>
+                        </div>
+                        <button onclick="calculateSetup()" class="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-gamer font-bold py-3.5 rounded-lg transition duration-300 uppercase tracking-wider shadow-lg">
+                            Analisar Configurações
+                        </button>
+                    </div>
+
+                    <!-- Bloco de Resultado do Simulador -->
+                    <div class="flex flex-col justify-center bg-black/40 p-6 rounded-xl border border-purple-900/30 text-center relative min-h-[200px]">
+                        <div id="sim-loading" class="hidden absolute inset-0 bg-[#110924] rounded-xl flex flex-col justify-center items-center">
+                            <div class="w-10 h-10 border-4 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
+                            <p class="text-xs text-purple-400 mt-2 font-semibold uppercase tracking-widest">Analisando dados...</p>
+                        </div>
+                        
+                        <div id="sim-result-default">
+                            <i data-lucide="cpu" class="w-12 h-12 text-purple-500 mx-auto mb-3 animate-pulse"></i>
+                            <h4 class="font-gamer font-bold text-lg text-white uppercase">Aguardando Parâmetros</h4>
+                            <p class="text-xs text-gray-500 mt-1">Insira as opções ao lado para carregar a melhor recomendação.</p>
+                        </div>
+
+                        <div id="sim-result" class="hidden space-y-3">
+                            <span class="bg-blue-900/60 text-blue-300 border border-blue-500/40 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider" id="sim-res-badge">RECOMENDADO</span>
+                            <h4 class="font-gamer font-black text-xl text-purple-400 uppercase mt-2" id="sim-res-title">SENSIBILIDADE VIP ANDROID</h4>
+                            <p class="text-sm text-gray-300" id="sim-res-desc">Configuração calibrada com DPI de alto desempenho para evitar instabilidade na mira.</p>
+                            <div class="bg-[#110924]/60 p-3 rounded border border-purple-500/20 flex justify-between items-center text-left">
+                                <div>
+                                    <p class="text-[10px] text-gray-500 uppercase font-semibold">Valor Unitário</p>
+                                    <p class="text-xl font-gamer font-extrabold text-white" id="sim-res-price">R$ 10,00</p>
+                                </div>
+                                <button id="sim-res-btn" class="bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs px-4 py-2.5 rounded uppercase transition duration-300">
+                                    Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERGUNTAS FREQUENTES -->
+    <section id="duvidas" class="py-20 px-4 bg-[#06030c] border-t border-purple-950/40">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center space-y-4 mb-12">
+                <h2 class="font-gamer font-black text-4xl uppercase text-white">
+                    PERGUNTAS FREQUENTES
+                </h2>
+                <p class="text-gray-400">
+                    Esclareça as suas dúvidas sobre os produtos e entrega via Discord.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-[#0b0518] rounded-xl border border-purple-500/20 overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full p-5 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-gamer font-bold text-white md:text-lg">COMO É FEITA A ENTREGA DOS PRODUTOS?</span>
+                        <i id="faq-icon-1" data-lucide="chevron-down" class="w-5 h-5 text-purple-400 transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-ans-1" class="hidden p-5 pt-0 border-t border-purple-950/40 text-gray-400 text-sm md:text-base">
+                        A entrega é feita exclusivamente por **Ticket no nosso servidor oficial do Discord**. Após efetuar o pagamento do pedido, você deve acessar o Discord (<a href="https://discord.gg/SqQCERwcD" target="_blank" class="text-purple-400 underline">discord.gg/SqQCERwcD</a>), abrir um Ticket de Envio e enviar o seu comprovante de pagamento.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-[#0b0518] rounded-xl border border-purple-500/20 overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full p-5 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-gamer font-bold text-white md:text-lg">CORRO RISCO DE SER BANIDO?</span>
+                        <i id="faq-icon-2" data-lucide="chevron-down" class="w-5 h-5 text-purple-400 transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-ans-2" class="hidden p-5 pt-0 border-t border-purple-950/40 text-gray-400 text-sm md:text-base">
+                        Não, de forma alguma. Os ajustes e configurações fornecidas utilizam apenas definições nativas do próprio dispositivo (sistema Android, opções do programador, definições internas do iOS ou mapeamento nativo de emuladores). Não são injetados arquivos no jogo, garantindo segurança total.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-[#0b0518] rounded-xl border border-purple-500/20 overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full p-5 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-gamer font-bold text-white md:text-lg">QUAIS OS PREÇOS E OPÇÕES DISPONÍVEIS?</span>
+                        <i id="faq-icon-3" data-lucide="chevron-down" class="w-5 h-5 text-purple-400 transition-transform duration-300"></i>
+                    </button>
+                    <div id="faq-ans-3" class="hidden p-5 pt-0 border-t border-purple-950/40 text-gray-400 text-sm md:text-base">
+                        Dispomos de Sensibilidades para Android (R$ 10,00), iOS (R$ 15,00) e Emulador (R$ 20,00). Os HUDs disponíveis são: HUD 2 Dedos (R$ 5,00), HUD 3 Dedos (R$ 7,00), HUD 4 Dedos (R$ 10,00) e o HUD Personalizado (R$ 12,00).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto bg-[#030107] border-t border-purple-950/60 py-12 px-4 text-center">
+        <div class="max-w-6xl mx-auto space-y-6">
+            <!-- Footer logo -->
+            <div class="flex items-center justify-center space-x-3">
+                <div class="w-8 h-8 overflow-hidden border border-purple-500/40 rounded-full">
+                    <img src="36077.png" alt="TL Store Footer Logo" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/1e0b36/a855f7?text=TL'">
+                </div>
+                <span class="font-gamer font-black text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-400">TL STORE</span>
+            </div>
+            
+            <p class="text-sm text-gray-500 max-w-md mx-auto">
+                Este site é independente e não possui filiação oficial à Garena Free Fire. Todos os ajustes são recursos de customização nativa.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400 font-semibold">
+                <a href="https://discord.gg/SqQCERwcD" target="_blank" class="hover:text-purple-400 transition flex items-center gap-1.5 text-[#5865F2]">
+                    <i data-lucide="message-square" class="w-4 h-4"></i> Servidor Discord
+                </a>
+                <span>•</span>
+                <a href="#" class="hover:text-purple-400 transition">Termos de Uso</a>
+                <span>•</span>
+                <a href="#" class="hover:text-purple-400 transition">Privacidade</a>
+            </div>
+
+            <p class="text-xs text-gray-600 pt-4 border-t border-purple-950/20">
+                &copy; 2026 TL STORE. Todos os direitos reservados.
+                <br>Desenhado pela Equipe de Webdesign TL Store.
+            </p>
+        </div>
+    </footer>
+
+    <!-- CARRINHO DE COMPRAS -->
+    <div id="cart-drawer" class="fixed inset-y-0 right-0 w-full max-w-md bg-[#0b0518] border-l border-purple-950/60 shadow-[0_0_50px_rgba(0,0,0,0.8)] z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+        <!-- Header Carrinho -->
+        <div class="p-6 border-b border-purple-950/60 flex items-center justify-between bg-black/30">
+            <h3 class="font-gamer font-black text-xl text-purple-400 flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="w-6 h-6"></i> SEU INVENTÁRIO
+            </h3>
+            <button onclick="toggleCart()" class="p-2 hover:bg-purple-900/20 rounded-lg text-gray-400 hover:text-white transition">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Lista de Itens -->
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+            <!-- Vazio por padrão -->
+            <div id="cart-empty-state" class="h-full flex flex-col justify-center items-center text-center text-gray-500 space-y-3">
+                <i data-lucide="ghost" class="w-16 h-16 text-purple-950"></i>
+                <p class="font-gamer font-bold text-lg uppercase">CARRINHO VAZIO</p>
+                <p class="text-xs max-w-xs">Nenhuma sensibilidade ou HUD adicionado ao inventário.</p>
+                <button onclick="toggleCart(); scrollToSection('produtos')" class="bg-purple-950 hover:bg-purple-900 text-purple-300 font-bold text-xs px-4 py-2 rounded-lg transition border border-purple-500/20">
+                    ADICIONAR PRODUTOS
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer Carrinho -->
+        <div id="cart-footer" class="p-6 border-t border-purple-950/60 bg-black/40 space-y-4 hidden">
+            <div class="flex justify-between items-center text-lg font-bold">
+                <span class="text-gray-400 uppercase">Subtotal</span>
+                <span class="text-2xl font-gamer text-white" id="cart-total-price">R$ 0,00</span>
+            </div>
+            <div class="bg-[#110924] p-3 rounded-xl border border-purple-500/20 text-xs text-gray-400 flex items-center gap-2">
+                <i data-lucide="info" class="w-4 h-4 text-purple-400 shrink-0"></i>
+                <span>A entrega do arquivo é feita através de Ticket de Suporte no Discord após confirmação.</span>
+            </div>
+            
+            <!-- Opções de Checkout -->
+            <div class="space-y-2">
+                <button onclick="triggerCheckout('whatsapp')" class="w-full bg-[#25d366] hover:bg-[#20ba5a] text-black font-gamer font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition duration-300 shadow-[0_0_15px_rgba(37,211,102,0.2)]">
+                    <i data-lucide="message-circle" class="w-5 h-5 fill-current"></i>
+                    REALIZAR COMPRA NO WHATSAPP
+                </button>
+                <button onclick="triggerCheckout('pix')" class="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-gamer font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition duration-300 shadow-[0_0_15px_rgba(168,85,247,0.3)]">
+                    <i data-lucide="qr-code" class="w-5 h-5"></i>
+                    PAGAR COM PIX (CÓDIGO COPIA/COLA)
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden transition-opacity duration-300 opacity-0"></div>
+
+    <!-- MODAL DE CHECKOUT EXCLUSIVO COM ENTREGA NO DISCORD -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeCheckoutModal()"></div>
+        <div class="bg-[#0b0518] border border-purple-500/40 rounded-2xl max-w-md w-full p-8 relative z-10 text-center space-y-6 shadow-[0_0_40px_rgba(168,85,247,0.3)]">
+            <div class="w-16 h-16 bg-purple-900/30 border border-purple-500 rounded-full flex items-center justify-center mx-auto text-purple-400 animate-bounce">
+                <i data-lucide="party-popper" class="w-8 h-8"></i>
+            </div>
+            
+            <div class="space-y-2">
+                <h3 class="font-gamer font-black text-2xl text-white uppercase" id="modal-title">Pedido Iniciado!</h3>
+                <p class="text-sm text-gray-400" id="modal-desc">Fatura processada. Siga as instruções de resgate.</p>
+            </div>
+
+            <!-- Código Pix Simulado ou Instrução do Whatsapp -->
+            <div class="bg-black/40 p-4 rounded-xl border border-purple-950/60 relative space-y-2">
+                <p class="text-[10px] text-gray-500 uppercase font-bold text-left mb-1" id="modal-field-label">Código PIX Copia e Cola</p>
+                <div class="flex items-center space-x-2">
+                    <input type="text" readonly id="modal-copy-field" class="w-full bg-slate-950 border border-purple-900/50 p-2.5 rounded text-xs font-mono text-purple-300 focus:outline-none" value="00020126580014br.gov.bcb.pix0136t1store-pix-key-random-checkout-0226">
+                    <button onclick="copyToClipboard()" class="p-2.5 bg-purple-600 hover:bg-purple-500 rounded text-white transition shrink-0" title="Copiar">
+                        <i data-lucide="copy" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Instrução Crucial de Resgate via Discord -->
+            <div class="p-4 bg-blue-950/40 rounded-xl border border-blue-500/30 text-center space-y-2">
+                <p class="text-xs text-blue-300 font-bold uppercase tracking-wider">COMO RECEBER O ARQUIVO:</p>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    Efetue o pagamento do seu código, acesse o Discord e anexe o seu comprovante num <strong>TICKET DE SUPORTE</strong> de envio!
+                </p>
+                <a href="https://discord.gg/SqQCERwcD" target="_blank" class="inline-flex items-center gap-2 bg-[#5865F2] hover:bg-[#4752C4] text-white font-gamer font-bold px-4 py-2.5 rounded text-xs tracking-wider transition-all duration-300 shadow-md">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 127.14 96.36"><path d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a77.7,77.7,0,0,0,6.63-10.85,68.43,68.43,0,0,1-10.45-5c.87-.64,1.71-1.32,2.51-2a75.52,75.52,0,0,0,72.71,0c.8.71,1.64,1.39,2.51,2a68.43,68.43,0,0,1-10.45,5,77.7,77.7,0,0,0,6.63,10.85,105.73,105.73,0,0,0,31-18.83C129.87,50.22,123.82,27.46,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.9,46,53.72,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.14,46,96,53,91,65.69,84.69,65.69Z"/></svg>
+                    ABRIR TICKET NO DISCORD
+                </a>
+            </div>
+
+            <button onclick="closeCheckoutModal()" class="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-gamer font-bold py-3 rounded-lg uppercase tracking-wider transition">
+                Retornar ao Site
+            </button>
+        </div>
+    </div>
+
+    <!-- NOTIFICAÇÃO FLUTUANTE (TOAST) -->
+    <div id="toast" class="fixed bottom-4 left-4 z-50 bg-gradient-to-r from-[#110924] to-[#0a0518] border border-purple-500/50 rounded-xl px-5 py-3 shadow-[0_0_20px_rgba(168,85,247,0.3)] transform translate-y-20 opacity-0 transition-all duration-300 flex items-center space-x-3 max-w-sm">
+        <div class="w-8 h-8 rounded-full bg-purple-900/30 flex items-center justify-center text-purple-400" id="toast-icon">
+            <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+        </div>
+        <div>
+            <p class="text-xs text-purple-400 uppercase font-bold" id="toast-title">Sucesso!</p>
+            <p class="text-xs text-white" id="toast-message">Item adicionado ao carrinho.</p>
+        </div>
+    </div>
+
+    <script>
+        // --- PRODUTOS COM VALORES EXATOS E NOMES DAS SUAS IMAGENS ---
+        const products = [
+            {
+                id: "sensi-android",
+                category: "sensibilidade",
+                title: "Sensibilidade Android Vip",
+                subtitle: "Para Motorola, Samsung, Xiaomi, etc.",
+                price: 10.00,
+                rating: 5,
+                image: "36080.png",
+                accentColor: "purple",
+                features: [
+                    "Ajuste Fino de DPI de 350 a 900",
+                    "Acelerador de Toque Nativo",
+                    "Velocidade do Ponteiro Ideal",
+                    "Entrega via Ticket no Discord"
+                ],
+                tag: "MAIS VENDIDO"
+            },
+            {
+                id: "sensi-ios",
+                category: "sensibilidade",
+                title: "Sensibilidade iOS Suprema",
+                subtitle: "Para todos os iPhones e iPads",
+                price: 15.00,
+                rating: 5,
+                image: "36080.png",
+                accentColor: "purple",
+                features: [
+                    "Controle Assistido Customizado",
+                    "Cursor Móvel Refinado (Individual)",
+                    "Ajuste 3D Touch & Sensibilidade",
+                    "Entrega via Ticket no Discord"
+                ],
+                tag: "ALTA TAXA HS"
+            },
+            {
+                id: "sensi-emulador",
+                category: "sensibilidade",
+                title: "Sensibilidade Emulador Pro",
+                subtitle: "BlueStacks 4/5, MSI & Outros",
+                price: 20.00,
+                rating: 5,
+                image: "36080.png",
+                accentColor: "purple",
+                features: [
+                    "Ajuste Eixo X & Y para Evitar Bug",
+                    "Ajuste DPI do Mouse (400 a 1600)",
+                    "Configuração do Editor de Controles",
+                    "Entrega via Ticket no Discord"
+                ],
+                tag: "CAMP/X1"
+            },
+            {
+                id: "hud-2dedos",
+                category: "hud",
+                title: "Hud 2 Dedos - Instaplayer",
+                subtitle: "Movimentação rápida e fluida",
+                price: 5.00,
+                rating: 4.8,
+                image: "36079.png",
+                accentColor: "blue",
+                features: [
+                    "Mapeamento limpo do ecrã",
+                    "Troca rápida de armas próxima",
+                    "Botão de atirar no tamanho perfeito",
+                    "Entrega via Ticket no Discord"
+                ],
+                tag: "FÁCIL INÍCIO"
+            },
+            {
+                id: "hud-3dedos",
+                category: "hud",
+                title: "Hud 3 Dedos - Agilidade",
+                subtitle: "Gelo agachado ultra veloz",
+                price: 7.00,
+                rating: 4.9,
+                image: "36079.png",
+                accentColor: "blue",
+                features: [
+                    "Controle total de mira aberta",
+                    "Gelo agachado no indicador",
+                    "Troca de arma de alta performance",
+                    "Entrega via Ticket no Discord"
+                ],
+                tag: "O PREFERIDO"
+            },
+            {
+                id: "hud-4dedos",
+                category: "hud",
+                title: "Hud 4 Dedos - Competitivo",
+                subtitle: "Para campeonatos e line-ups",
+                price: 10.00,
+                rating: 5,
+                image: "36079.png",
+                accentColor: "blue",
+                features: [
+                    "Atirar e agachar em simultâneo",
+                    "Mira rápida em pulo de emulador",
+                    "Controle absoluto de mira de escopo",
+                    "Entrega via Ticket no Discord"
+                ],
+                tag: "NÍVEL PRO"
+            },
+            {
+                id: "hud-emulador",
+                category: "hud",
+                title: "Hud Personalizado",
+                subtitle: "Sem bugs de analógico ou clique",
+                price: 12.00,
+                rating: 5,
+                image: "36079.png",
+                accentColor: "blue",
+                features: [
+                    "Mapeamento inteligente completo",
+                    "Sem bugs de suspensão do ponteiro",
+                    "Mapeamento de teclas otimizado",
+                    "Entrega via Ticket no Discord"
+                ],
+                tag: "ZERO RETROCESSO"
+            }
+        ];
+
+        // --- SISTEMA DO CARRINHO DE COMPRAS ---
+        let cart = [];
+
+        // --- INICIALIZAÇÃO ---
+        window.addEventListener('DOMContentLoaded', () => {
+            renderAllProducts();
+            lucide.createIcons();
+            
+            // Ativa o scroll suave para as âncoras
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    scrollToSection(this.getAttribute('href').substring(1));
+                });
+            });
+        });
+
+        // --- RENDERIZADORES DE CARDS COM FALLBACK ---
+        function createProductCard(prod) {
+            const isPurple = prod.accentColor === "purple";
+            const borderClass = isPurple ? "hover:border-purple-500/40 border-purple-500/10 shadow-[0_0_20px_rgba(168,85,247,0.02)]" : "hover:border-blue-500/40 border-blue-500/10 shadow-[0_0_20px_rgba(37,99,235,0.02)]";
+            const badgeClass = isPurple ? "bg-purple-950 text-purple-300 border-purple-500/30" : "bg-blue-950 text-blue-300 border-blue-500/30";
+            const btnClass = isPurple ? "bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-500 hover:to-purple-700 shadow-[0_0_15px_rgba(168,85,247,0.2)]" : "bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 shadow-[0_0_15px_rgba(37,99,235,0.2)]";
+            const iconColor = isPurple ? "text-purple-400" : "text-blue-400";
+
+            let ratingStars = '';
+            for (let i = 1; i <= 5; i++) {
+                ratingStars += `<i data-lucide="star" class="w-3.5 h-3.5 fill-current ${i <= Math.floor(prod.rating) ? 'text-yellow-500' : 'text-gray-600'}"></i>`;
+            }
+
+            return `
+                <div class="bg-[#0b0518]/90 rounded-2xl border transition-all duration-300 flex flex-col h-full group hover:translate-y-[-4px] overflow-hidden ${borderClass}">
+                    <!-- Imagem de Capa baseada no arquivo carregado -->
+                    <div class="relative h-44 overflow-hidden flex items-end p-4 bg-slate-950">
+                        <img src="${prod.image}" alt="${prod.title}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/400x300/1e0b36/a855f7?text=TL+STORE'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0b0514] via-transparent to-transparent opacity-85"></div>
+                        <span class="relative z-10 border px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full ${badgeClass}">
+                            ${prod.tag}
+                        </span>
+                    </div>
+
+                    <!-- Informações do Produto -->
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4 bg-[#0b0518]/95">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">${prod.category}</span>
+                                <div class="flex items-center space-x-1">${ratingStars}</div>
+                            </div>
+                            <h4 class="font-gamer font-black text-xl text-white tracking-wide uppercase text-left">${prod.title}</h4>
+                            <p class="text-xs text-gray-400 font-semibold text-left">${prod.subtitle}</p>
+                            
+                            <!-- Lista de Funcionalidades -->
+                            <ul class="space-y-1.5 pt-2">
+                                ${prod.features.map(f => `
+                                    <li class="flex items-center text-xs text-gray-300 text-left">
+                                        <i data-lucide="check" class="w-3.5 h-3.5 ${iconColor} mr-2 shrink-0"></i>
+                                        <span>${f}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+
+                        <!-- Rodapé com Preço e Botão -->
+                        <div class="border-t border-purple-950/40 pt-4 flex items-center justify-between">
+                            <div class="text-left">
+                                <p class="text-[9px] text-gray-500 uppercase font-bold tracking-wider">Apenas hoje</p>
+                                <p class="text-2xl font-gamer font-extrabold text-white">R$ ${prod.price.toFixed(2).replace('.', ',')}</p>
+                            </div>
+                            <button onclick="addToCart('${prod.id}')" class="px-4 py-2.5 rounded-xl font-gamer font-extrabold text-xs text-white uppercase tracking-wider flex items-center gap-1.5 transition-all duration-300 transform group-hover:scale-105 ${btnClass}">
+                                <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                                ADICIONAR
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderAllProducts() {
+            const sensis = products.filter(p => p.category === "sensibilidade");
+            const huds = products.filter(p => p.category === "hud");
+
+            document.getElementById('sensibilidades-grid-all').innerHTML = sensis.map(createProductCard).join('');
+            document.getElementById('huds-grid-all').innerHTML = huds.map(createProductCard).join('');
+
+            document.getElementById('sensibilidades-grid-only').innerHTML = sensis.map(createProductCard).join('');
+            document.getElementById('huds-grid-only').innerHTML = huds.map(createProductCard).join('');
+        }
+
+        // --- SISTEMA DE SELEÇÃO DE ABAS ---
+        function showCategory(category) {
+            const btns = {
+                all: document.getElementById('btn-all'),
+                sensibilidade: document.getElementById('btn-sensibilidade'),
+                hud: document.getElementById('btn-hud')
+            };
+
+            const containers = {
+                all: document.getElementById('all-container'),
+                sensibilidade: document.getElementById('sensibilidade-container'),
+                hud: document.getElementById('hud-container')
+            };
+
+            for (let key in btns) {
+                if (btns[key]) {
+                    btns[key].className = "px-6 py-3.5 bg-slate-900 text-gray-300 hover:text-white font-gamer font-extrabold rounded-xl transition duration-300 border border-purple-950/60 hover:bg-slate-800 flex items-center gap-2 hover:scale-105";
+                }
+            }
+            for (let key in containers) {
+                if (containers[key]) {
+                    containers[key].classList.remove('active');
+                }
+            }
+
+            if (category === 'all') {
+                btns.all.className = "px-6 py-3.5 bg-purple-600 text-white font-gamer font-extrabold rounded-xl transition duration-300 border border-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:scale-105";
+                containers.all.classList.add('active');
+            } else if (category === 'sensibilidade') {
+                btns.sensibilidade.className = "px-6 py-3.5 bg-purple-600 text-white font-gamer font-extrabold rounded-xl transition duration-300 border border-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.3)] flex items-center gap-2 hover:scale-105";
+                containers.sensibilidade.classList.add('active');
+            } else if (category === 'hud') {
+                btns.hud.className = "px-6 py-3.5 bg-blue-600 text-white font-gamer font-extrabold rounded-xl transition duration-300 border border-blue-500 shadow-[0_0_15px_rgba(37,99,235,0.3)] flex items-center gap-2 hover:scale-105";
+                containers.hud.classList.add('active');
+            }
+
+            lucide.createIcons();
+            scrollToSection('produtos');
+        }
+
+        // --- SISTEMA INTERATIVO DO CARRINHO ---
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-overlay');
+            
+            if (drawer.classList.contains('translate-x-full')) {
+                drawer.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.add('opacity-100'), 10);
+            } else {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.remove('opacity-100');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+            }
+        }
+
+        // --- ADICIONAR E REMOVER PRODUTOS ---
+        function addToCart(prodId) {
+            const product = products.find(p => p.id === prodId);
+            if (!product) return;
+
+            if (cart.some(item => item.id === prodId)) {
+                showToast("Este item já está adicionado ao teu carrinho!");
+                toggleCart();
+                return;
+            }
+
+            cart.push(product);
+            updateCartUI();
+            showToast(`${product.title} adicionado!`);
+            toggleCart();
+        }
+
+        function removeFromCart(prodId) {
+            cart = cart.filter(item => item.id !== prodId);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const countElem = document.getElementById('cart-count');
+            const itemsContainer = document.getElementById('cart-items');
+            const footerContainer = document.getElementById('cart-footer');
+            const emptyState = document.getElementById('cart-empty-state');
+            const totalElem = document.getElementById('cart-total-price');
+
+            if (cart.length > 0) {
+                countElem.textContent = cart.length;
+                countElem.classList.remove('hidden');
+                emptyState.classList.add('hidden');
+                footerContainer.classList.remove('hidden');
+            } else {
+                countElem.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                footerContainer.classList.add('hidden');
+            }
+
+            itemsContainer.innerHTML = '';
+            if (cart.length > 0) {
+                cart.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = "flex items-center justify-between p-4 bg-slate-900/60 rounded-xl border border-purple-500/15";
+                    
+                    const imageOrPlaceholder = item.image ? `<img src="${item.image}" alt="${item.title}" class="w-12 h-12 rounded-lg object-cover border border-purple-500/25" onerror="this.src='https://placehold.co/100x100/1e0b36/a855f7?text=TL'">` : '';
+
+                    itemDiv.innerHTML = `
+                        <div class="flex items-center space-x-3 text-left">
+                            <div class="shrink-0 relative">${imageOrPlaceholder}</div>
+                            <div>
+                                <h5 class="font-gamer font-bold text-sm text-white uppercase">${item.title}</h5>
+                                <p class="text-xs text-purple-400 font-semibold">R$ ${item.price.toFixed(2).replace('.', ',')}</p>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart('${item.id}')" class="text-red-500 hover:text-red-400 p-1.5 hover:bg-red-500/10 rounded transition">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    `;
+                    itemsContainer.appendChild(itemDiv);
+                });
+                lucide.createIcons();
+            } else {
+                itemsContainer.appendChild(emptyState);
+            }
+
+            const subtotal = cart.reduce((total, item) => total + item.price, 0);
+            totalElem.textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+        }
+
+        // --- SISTEMA DE COMPRAS E SUPORTE (CHECKOUT) ---
+        function triggerCheckout(method) {
+            if (cart.length === 0) return;
+            
+            const subtotal = cart.reduce((total, item) => total + item.price, 0);
+            const itemsName = cart.map(item => item.title).join(', ');
+            
+            const modal = document.getElementById('checkout-modal');
+            const title = document.getElementById('modal-title');
+            const desc = document.getElementById('modal-desc');
+            const fieldLabel = document.getElementById('modal-field-label');
+            const copyField = document.getElementById('modal-copy-field');
+
+            if (method === 'whatsapp') {
+                title.textContent = "CONECTANDO AO WHATSAPP";
+                desc.textContent = `Finalize o seu pedido de ${cart.length} item(ns) com suporte e resgate pelo Discord.`;
+                fieldLabel.textContent = "Mensagem pré-formatada:";
+                copyField.value = `Olá TL STORE! Pretendo adquirir as seguintes configurações: [${itemsName}] no valor de R$ ${subtotal.toFixed(2).replace('.', ',')}. Vou abrir o ticket no Discord para concluir!`;
+                
+                const textMessage = encodeURIComponent(copyField.value);
+                setTimeout(() => {
+                    window.open(`https://wa.me/5500999999999?text=${textMessage}`, '_blank');
+                }, 1200);
+
+            } else if (method === 'pix') {
+                title.textContent = "PIX COPIA E COLA GERADO";
+                desc.textContent = "Abaixo está o seu código para pagamento. Assim que concluir, abra um ticket de suporte no nosso Discord!";
+                fieldLabel.textContent = "Código Pix Copia e Cola:";
+                copyField.value = `00020126580014br.gov.bcb.pix0136t1store-pix-key-random-checkout-02265204000053039865405${subtotal.toFixed(0)}5802BR5908TL_STORE6009SAO_PAULO62070503***6304FC7D`;
+            }
+
+            modal.classList.remove('hidden');
+            toggleCart();
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+
+        function copyToClipboard() {
+            const input = document.getElementById('modal-copy-field');
+            input.select();
+            input.setSelectionRange(0, 99999); 
+            document.execCommand('copy');
+            showToast("Código copiado!");
+        }
+
+        // --- SIMULADOR DE SETUP INTERATIVO ---
+        function calculateSetup() {
+            const device = document.getElementById('sim-device').value;
+            const difficulty = document.getElementById('sim-difficulty').value;
+            
+            const loading = document.getElementById('sim-loading');
+            const defaultState = document.getElementById('sim-result-default');
+            const resultState = document.getElementById('sim-result');
+            
+            const resBadge = document.getElementById('sim-res-badge');
+            const resTitle = document.getElementById('sim-res-title');
+            const resDesc = document.getElementById('sim-res-desc');
+            const resPrice = document.getElementById('sim-res-price');
+            const resBtn = document.getElementById('sim-res-btn');
+
+            defaultState.classList.add('hidden');
+            resultState.classList.add('hidden');
+            loading.classList.remove('hidden');
+
+            setTimeout(() => {
+                loading.classList.add('hidden');
+                resultState.classList.remove('hidden');
+
+                let selectedProduct;
+
+                if (device === 'ios') {
+                    selectedProduct = products.find(p => p.id === 'sensi-ios');
+                    resBadge.textContent = "IDEAL PARA O SEU IPHONE";
+                    resDesc.textContent = "Os parâmetros VIP do iOS irão suavizar os toques e reduzir o bug de " + (difficulty === 'pinando' ? "a mira passar da cabeça" : "a mira colar no peito") + ".";
+                } else if (device === 'emulador') {
+                    selectedProduct = products.find(p => p.id === 'sensi-emulador');
+                    resBadge.textContent = "SENSI RECOMENDADA EMULADOR";
+                    resDesc.textContent = "Configurações ajustadas com otimização no cursor e DPI do mouse para estabilizar o recoil de mira aberta.";
+                } else {
+                    selectedProduct = products.find(p => p.id === 'sensi-android');
+                    resBadge.textContent = "RECOMENDADO ANDROID";
+                    resDesc.textContent = "Solução calibrada com DPI perfeita para resolver " + (difficulty === 'peito' ? "a mira presa no peito (amarelo)" : "os disparos instáveis da arma") + ".";
+                }
+
+                if (selectedProduct) {
+                    resTitle.textContent = selectedProduct.title;
+                    resPrice.textContent = `R$ ${selectedProduct.price.toFixed(2).replace('.', ',')}`;
+                    resBtn.setAttribute('onclick', `addToCart('${selectedProduct.id}')`);
+                }
+            }, 1200);
+        }
+
+        // --- INTERFACE UTILS ---
+        function toggleFaq(id) {
+            const ans = document.getElementById(`faq-ans-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                ans.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = msg;
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function scrollToSection(id) {
+            const target = document.getElementById(id);
+            if (target) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const offsetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+</body>
+</html>
