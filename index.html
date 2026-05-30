@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TL STORE | A Sua Vantagem no Free Fire</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d0714;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e0b36 0%, #0d0714 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 2px solid #8a2be2;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .logo-container img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #8a2be2;
+            box-shadow: 0 0 20px #8a2be2;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #ba55d3;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .card-produto {
+            background-color: #160f24;
+            border: 1px solid #321b4f;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-produto:hover {
+            transform: translateY(-5px);
+            border-color: #8a2be2;
+        }
+
+        .card-produto img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            display: block;
+        }
+
+        .produto-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .produto-titulo {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .produto-detalhes {
+            font-size: 0.9rem;
+            color: #b0a6bd;
+            margin-bottom: 15px;
+        }
+
+        .cta-button {
+            display: block;
+            background: linear-gradient(90deg, #8a2be2 0%, #4b0082 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(90deg, #a040f0 0%, #5a009d 100%);
+            box-shadow: 0 0 15px #8a2be2;
+        }
+
+        footer {
+            background-color: #08040d;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            border-top: 1px solid #1e0b36;
+            color: #70657b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="36077.png" alt="TL STORE Logo">
+        </div>
+        <h1>TL STORE</h1>
+        <p class="subtitle">A sua vantagem no Free Fire</p>
+    </header>
+
+    <div class="container">
+        <div class="grid-produtos">
+            
+            <div class="card-produto">
+                <img src="36080.png" alt="TL SENSI">
+                <div class="produto-info">
+                    <div>
+                        <h2 class="produto-titulo">TL SENSI</h2>
+                        <p class="produto-detalhes">Melhore a sua precisão, aumente a taxa de capa e domine o jogo com a sensibilidade calibrada para o seu dispositivo.</p>
+                    </div>
+                    <a href="https://discord.gg/SqQCERwcD" target="_blank" class="cta-button">Adquirir via Discord</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="36079.png" alt="TL HUDS">
+                <div class="produto-info">
+                    <div>
+                        <h2 class="produto-titulo">TL HUDS</h2>
+                        <p class="produto-detalhes">Layouts de botões otimizados para movimentação rápida, troca de armas instantânea e o gelo mais rápido do cenário.</p>
+                    </div>
+                    <a href="https://discord.gg/SqQCERwcD" target="_blank" class="cta-button">Adquirir via Discord</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TL STORE. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
